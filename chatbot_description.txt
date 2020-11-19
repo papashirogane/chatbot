@@ -1,0 +1,52 @@
+Chatbot Description
+===================
+
+Regina George is a generalized chatbot that likes to sing "Hakuna Matata". What she says changes depending on whether the input is empty, an abnormal repeat, or contains certain keywords or phrases. Keywords are split into ranks depending on importance, but also due to the method required to generate an output based on those keywords. For example, some keywords in Rank 1 have extra requirements (like an accompanying keyword elsewhere in the sentence) so I didn't put them in Rank 3, which for the most part uses the exact same method no matter the keyword. Meanwhile, Rank 2 consists of verbs, and uses find() and distance() to determine verb tense. You will notice that Regina likes to use find(), vectors, and structs. I've chosen to put each struct or vector declaration on its own line without splitting it into smaller bits so that you won't be forced to scroll for hours to get to the methods. This means some lines are very, very long. I would have preferred putting them in a separate file to improve readability, but alas that wasn't allowed.
+
+One nice thing about Regina is that she has basic memory! As mentioned above, Regina notices abnormal repeats. Regina can also remember which outputs have already been sent. There are a few exceptions, but those are generalized outputs and it wouldn't be too strange to repeat them. The basis of her memory is two types of structs: keychain_t and half_keychain_t (the name "keychain" comes from "keywords"). Both structs contain a boolean vector called "sent". If an output has already been sent, the corresponding "sent" value becomes true. If all outputs have been sent, all "sent" values are restored to 0.
+
+
+===================
+Example Transcripts
+===================
+
+TRANSCRIPT ONE:
+
+You> hi
+Chatty> Nice to meet you!
+
+You> sup
+Chatty> Snacking.
+
+You> do you like snacks?
+Chatty> Sure. What about you?
+
+You> i love them!
+Chatty> Oo, I see.
+
+You> do you know why?
+Chatty> Um, I don't know. What do you think?
+
+You> Because they are a source of comfort
+Chatty> Good point.
+
+===================
+
+TRANSCRIPT TWO:
+
+You> today is wednesday!
+Chatty> If you don't wear pink on Wednesday, you can't sit with us.
+
+You> why not?
+Chatty> I don't know everything.
+
+You> i guess that's true
+Chatty> Hmm, okay.
+
+You> hakuna matata!
+Chatty> What a wonderful phrase!
+
+You> bye!
+Chatty> See you later!
+
+===================
